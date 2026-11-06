@@ -397,15 +397,8 @@ footer p{max-width:1000px;margin-top:12px}
       <li><span>Pool</span><div><b>21′ × 10′</b><em>Set just off the covered porch</em></div></li>
       <li><span>Spa</span><div><b>10′ × 7′</b><em>Tucked beside the pool terrace</em></div></li>
       <li><span>Covered porch</span><div><b>22′6″ × 15′7″, fireplace</b><em>Outdoor living you can use most of the year</em></div></li>
-      <li><span>Landscape</span><div><b>Planted perimeter for privacy</b><em>Per the landscape plan (L100)</em></div></li>
-      <li><span>Plans</span><div><b>Landscape + pool layout</b><em>Tap either plan below to open it full size</em></div></li>
+      <li><span>Landscape</span><div><b>Planted perimeter for privacy</b><em>Per the landscape plan</em></div></li>
     </ul>
-  </div>
-  <div class="wrap" style="margin-top:60px">
-    <div class="band duo" style="padding:0;grid-template-columns:1fr 1fr">
-      <figure class="w" data-p="site-landscape-plan" style="height:auto;background:#fff"><img src="img/site-landscape-plan.jpg" alt="Landscape plan" loading="lazy" style="height:auto;object-fit:contain"></figure>
-      <figure class="w" data-p="site-pool-layout" style="height:auto;background:#fff"><img src="img/site-pool-layout.jpg" alt="Pool layout plan" loading="lazy" style="height:auto;object-fit:contain"></figure>
-    </div>
   </div>
 </section>
 
@@ -500,7 +493,7 @@ addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > innerHe
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
 $$('.fade').forEach(el => io.observe(el));
 const SEL = [["01-kitchen","Kitchen"],["02-scullery","Scullery"],["03-mudroom","Mudroom"],["04-great-room","Great room"],["05-dining-room","Dining room"],["06-bath-2","Bath 2"],["07-bedroom-2","Study · bedroom 2"],["08-powder","Powder room"],["09-primary-suite","Primary suite"],["10-second-primary-suite","Second primary suite"],["11-laundry","Laundry"],["12-bath-4","Bath 4"],["13-bath-5","Bath 5"]];
-const P = [["01-front","Front elevation · rendering"]].concat(SEL.map(s => ["sel-" + s[0], s[1] + " · design selections"])).concat([["site-pool-illustration","Rear yard · illustrative plan"],["site-landscape-plan","Landscape plan · L100"],["site-pool-layout","Pool layout · L200"]]), PB = "img/";
+const P = [["01-front","Front elevation · rendering"]].concat(SEL.map(s => ["sel-" + s[0], s[1] + " · design selections"])).concat([["site-pool-illustration","Rear yard · illustrative plan"]]), PB = "img/";
 const gg = $('#ggrid');
 SEL.forEach(s => { const f = document.createElement('figure'); f.dataset.p = 'sel-' + s[0]; f.style.background = '#fff'; f.innerHTML = `<img src="img/sel-${s[0]}.jpg" alt="${s[1]} design selections" loading="lazy">`; gg.appendChild(f); });
 const plb = $('#plb'), pimg = $('#plbImg'), pcap = $('#plbCap'); let pi = 0;
